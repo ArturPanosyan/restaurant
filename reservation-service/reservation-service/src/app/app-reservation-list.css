@@ -1,0 +1,24 @@
+app-reservation-list .reservation-list {
+  margin: 20px;
+}
+
+app-reservation-list .reservation-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+app-reservation-list .reservation-list th,
+app-reservation-list .reservation-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+app-reservation-list .reservation-list th {
+  background-color: #f2f2f2;
+  text-align: left; /* Ensure text alignment for headers */
+}
+
+app-reservation-list .reservation-list td {
+  text-align: left;
+  vertical-align: top;
+}

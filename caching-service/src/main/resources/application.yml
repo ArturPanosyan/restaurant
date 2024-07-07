@@ -1,0 +1,42 @@
+spring:
+    application:
+        name: cache-service
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+    endpoint:
+        health:
+            show-details: always
+server:
+    port: 8086
+
+    redis:
+        host: localhost
+        port: 6379
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            group-id: myGroup
+            auto-offset-reset: earliest
+        producer:
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        consumer:
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+    data:
+        elasticsearch:
+            cluster-nodes: localhost:9200
+            cluster-name: elasticsearch
+    redis:
+        host: localhost
+        port: 6379

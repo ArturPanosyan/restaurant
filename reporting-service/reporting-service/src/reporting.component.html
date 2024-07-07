@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Reports</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Report Name</th>
+      <th>Report Data</th>
+      <th>Report Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let report of reports)">
+      <td>{{ report.reportName }}</td>
+      <td>{{ report.reportData }}</td>
+      <td>{{ report.reportDate }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

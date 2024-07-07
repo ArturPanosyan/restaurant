@@ -1,0 +1,29 @@
+/* General styling for the reservation list */
+.reservation-list {
+  margin: 20px;
+}
+
+/* Styling for the table to make it full width and collapse borders */
+.reservation-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Styling for table headers and cells to add borders and padding */
+.reservation-list th,
+.reservation-list td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Styling for table headers to add a background color */
+.reservation-list th {
+  background-color: #f2f2f2;
+  text-align: left; /* Ensure text alignment for headers */
+}
+
+/* Additional styles for better visualization */
+.reservation-list td {
+  text-align: left;
+  vertical-align: top;
+}

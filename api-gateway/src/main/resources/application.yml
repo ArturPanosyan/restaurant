@@ -1,0 +1,73 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/order/**
+        - id: menu-service
+          uri: lb://menu-service
+          predicates:
+            - Path=/menu/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+    config:
+      uri: http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics
+  endpoint:
+    health:
+      show-details: always
+
+    data:
+      redis:
+        host: localhost:8080
+        port: 6379
+
+    elasticsearch:
+      rest:
+        uris: http://localhost:9200
+
+zuul:
+  routes:
+    auth-service:
+      path: /auth/**
+      url: http://localhost:8081
+    caching-service:
+      path: /cache/**
+      url: http://localhost:8082
+    menu-service:
+      path: /menu/**
+      url: http://localhost:8083
+    notification-service:
+      path: /notification/**
+      url: http://localhost:8084
+    order-service:
+      path: /order/**
+      url: http://localhost:8085
+    payment-service:
+      path: /payment/**
+      url: http://localhost:8086
+    reporting-service:
+      path: /report/**
+      url: http://localhost:8087
+    reservation-service:
+      path: /reservation/**
+      url: http://localhost:8088
+    review-service:
+      path: /review/**
+      url: http://localhost:8089
+    search-service:
+      path: /search/**
+      url: http://localhost:8090
+  prefix: /api

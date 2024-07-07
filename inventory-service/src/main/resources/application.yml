@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: inventory-service
+
+    data:
+        redis:
+            host: localhost:8087
+            port: 6379
+
+    elasticsearch:
+        rest:
+            uris: http://localhost:9200
